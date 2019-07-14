@@ -34,8 +34,7 @@ module.exports = {
       '/common': resolve('src/common'),
       '/assets': resolve('src/assets'),
       '/api': resolve('src/api'),
-      '/utils': resolve('src/utils'),
-      '/js' : resolve('src/js')
+      '/utils': resolve('src/utils')
     }
   },
   module: {

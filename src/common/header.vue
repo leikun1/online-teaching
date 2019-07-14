@@ -1,11 +1,11 @@
 <template>
   <div class="header-box">
-    <div>
+    <div class="header-container">
       <header class="w">
         <div class="w-box">
           <div class="nav-logo">
             <h1 @click="changePage(-1)">
-              <router-link to="/" title="在线学习">在线学习</router-link>
+              <router-link to="/" title="在线教学">在线教学</router-link>
             </h1>
           </div>
           <div class="right-box" :class="{fixed:st}">
@@ -21,10 +21,14 @@
                 :on-icon-click="handleIconClick"
                 @keydown.enter.native="handleIconClick">
               </el-autocomplete>-->
-              <router-link to="/"><a @click="changGoods(-1)" :class="{active:choosePage===-1}">首页</a></router-link>
-              <li v-for="(item,i) in navList" :key="i">
-                <a @click="changGoods(i, item)" :class="{active:i===choosePage}">{{item.picUrl}}</a>
+              <ul>
+              <li>
+                <a @click="changGoods(-1)" :class="{active:choosePage===-1}">首页</a>
               </li>
+              <li v-for="(item,i) in navList" :key="i">
+                <a @click="changGoods(i, item)" :class="{active:i===choosePage}">{{item.name}}</a>
+              </li>
+              </ul>
             </div>
             <div class="nav-aside" ref="aside" :class="{fixed:st}">
               <div class="user pr">
@@ -74,10 +78,7 @@
             <div class="w">
               <ul class="nav-list2">
                 <li>
-                  <router-link to="/"><a @click="changGoods(-1)" :class="{active:choosePage===-1}">首页</a></router-link>
-                </li>
-                <li v-for="(item,i) in navList" :key="i">
-                  <a @click="changGoods(i, item)" :class="{active:i===choosePage}">{{item.picUrl}}</a>
+                  <a @click="changGoods(-1)" :class="{active:choosePage===-1}">课程中心 \ 课程详情</a>
                 </li>
               </ul>
               <div></div>
@@ -91,12 +92,12 @@
 <script>
   import YButton from '/components/YButton'
   import { mapMutations, mapState } from 'vuex'
-  import { getCartList, cartDel, getQuickSearch } from '/api/goods'
+  import { getCartList, cartDel } from '/api/goods'
   import { loginOut, navList } from '/api/index'
   import { setStore, getStore, removeStore } from '/utils/storage'
   // import store from '../store/'
   import 'element-ui/lib/theme-default/index.css'
-  import { navMenu } from '/js/common/global'
+  import { navMenu } from '/assets/js/common/global'
   export default{
     data () {
       return {
@@ -171,66 +172,10 @@
           this.$router.push({
             path: '/'
           })
-        } else if (v === -2) {
+        } else {
           this.$router.push({
-            path: '/refreshgoods'
+            path: item.path
           })
-        } else {
-          // 站内跳转
-          if (item.type === 1) {
-            window.location.href = item.fullUrl
-          } else {
-            // 站外跳转
-            window.open(item.fullUrl)
-          }
-        }
-      },
-      // 搜索框提示
-      loadAll () {
-        let params = {
-          params: {
-            key: this.input
-          }
-        }
-        getQuickSearch(params).then(res => {
-          if (res === null || res === '') {
-            return
-          }
-          if (res.error) {
-            this.showError(res.error.reason)
-            return
-          }
-          var array = []
-          var maxSize = 5
-          if (res.hits.hits.length <= 5) {
-            maxSize = res.hits.hits.length
-          }
-          for (var i = 0; i < maxSize; i++) {
-            var obj = {}
-            obj.value = res.hits.hits[i]._source.productName
-            array.push(obj)
-          }
-          if (array.length !== 0) {
-            this.searchResults = array
-          } else {
-            this.searchResults = []
-          }
-        })
-      },
-      querySearchAsync (queryString, cb) {
-        if (this.input === undefined) {
-          cb([])
-          return
-        }
-        this.input = this.input.trim()
-        if (this.input === '') {
-          cb([])
-          return
-        } else {
-          this.loadAll()
-          setTimeout(() => {
-            cb(this.searchResults)
-          }, 300)
         }
       },
       handleSelect (item) {
@@ -264,7 +209,7 @@
       },
       // 控制顶部
       navFixed () {
-        if (this.$route.path === '/goods' || this.$route.path === '/home' || this.$route.path === '/goodsDetails' || this.$route.path === '/thanks') {
+        if (this.$route.path === '/' || this.$route.path === '/home') {
           var st = document.documentElement.scrollTop || document.body.scrollTop
           st >= 100 ? this.st = true : this.st = false
           // 计算小圆当前位置
@@ -294,8 +239,12 @@
         // let fullPath = this.$route.fullPath
         if (path === '/' || path === '/home') {
           this.changePage(-1)
-        } else if (path === '/goods') {
-          this.changePage(-2)
+        } else if (navMenu) {
+          for (let i in navMenu) {
+            if (path === navMenu[i].path) {
+              this.changePage(parseInt(i))
+            }
+          }
         } else {
           this.changePage(0)
         }
@@ -417,14 +366,14 @@
 
   .header-box {
     background: $head-bgc;
-    background-image: -webkit-linear-gradient(#000, #121212);
-    background-image: linear-gradient(#000, #121212);
+    background-image: -webkit-linear-gradient(#8BCC29, #8BCC29);
+    background-image: linear-gradient(#8BCC29, #8BCC29);
     width: 100%;
 
   }
 
   header {
-    height: 100px;
+    height: 80pt;
     z-index: 30;
     position: relative;
   }
@@ -440,10 +389,10 @@
       display: flex;
       align-items: center;
       > a {
-        background: url(/static/images/global-logo-red@2x.png) no-repeat 50%;
+        background: url(/static/images/logo/logo-m.png) no-repeat 50%;
         background-size: cover;
         display: block;
-        @include wh(50px, 40px);
+        @include wh(141pt,47pt);
         text-indent: -9999px;
         background-position: 0 0;
       }
@@ -456,14 +405,20 @@
       .el-autocomplete{
         width: 305px;
       }
+      ul {
+        display: flex;
+      }
       a {
-        width: 110px;
-        color: #c8c8c8;
+        color: #fff;
         display: block;
-        font-size: 14px;
-        padding: 0 25px;
+        font-size: 20pt;
+        padding: 0 14pt;
         &:hover {
           color: #fff;
+        }
+        &.active{
+          border-bottom: 4px solid #FFF;
+          padding-bottom: 5pt;
         }
       }
       a:nth-child(2){
@@ -909,8 +864,8 @@
   .nav-sub {
     position: relative;
     z-index: 20;
-    height: 90px;
-    background: #f7f7f7;
+    height: 56pt;
+    background: #F2F2F2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
     &.fixed {
       position: fixed;
@@ -971,9 +926,9 @@
         a {
           display: block;
           padding: 0 10px;
-          color: #666;
+          color: #AAAEB3;
           &.active {
-            font-weight: bold;
+            font-weight: 14pt;
           }
         }
         a:hover {

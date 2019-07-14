@@ -26,6 +26,11 @@ const orderDetail = () => import('/page/User/children/orderDetail.vue')
 const Alipay = () => import('/page/Order/alipay.vue')
 const Wechat = () => import('/page/Order/wechat.vue')
 const QQpay = () => import('/page/Order/qqpay.vue')
+const CourceCenter = () => import('/page/Menu/courcecenter.vue')
+const StudyCenter = () => import('/page/Menu/studycenter.vue')
+const TrainingCenter = () => import('/page/Menu/trainingcenter.vue')
+const SettingCenter = () => import('/page/Menu/settingcenter.vue')
+const DataCenter = () => import('/page/Menu/datacenter.vue')
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -39,7 +44,12 @@ export default new Router({
         {path: 'goods', component: GoodS},
         {path: 'goodsDetails', name: 'goodsDetails', component: goodsDetails},
         {path: 'thanks', name: 'thanks', component: Thanks},
-        {path: '/refreshgoods', name: 'refreshgoods', component: RefreshGoods}
+        {path: 'refreshgoods', name: 'refreshgoods', component: RefreshGoods},
+        {path: 'courcecenter', name: 'courcecenter', component: CourceCenter},
+        {path: 'studycenter', name: 'studycenter', component: StudyCenter},
+        {path: 'trainingcenter', name: 'trainingcenter', component: TrainingCenter},
+        {path: 'settingcenter', name: 'settingcenter', component: SettingCenter},
+        {path: 'datacenter', name: 'datacenter', component: DataCenter}
       ]
     },
     {path: '/login', name: 'login', component: Login},

@@ -4,7 +4,9 @@ export let navMenu = [{
   'type': 1,
   'productId': null,
   'sortOrder': 1,
-  'fullUrl': 'http://xmall.exrick.cn/#/goods?cid=1184',
+  'name': '课程中心',
+  'path': '/courcecenter',
+  'fullUrl': '/goods?cid=1184',
   'picUrl': '课程中心',
   'picUrl2': null,
   'picUrl3': null,
@@ -13,13 +15,15 @@ export let navMenu = [{
   'salePrice': null,
   'productName': null,
   'subTitle': null,
-  'productImageBig': '品牌周边'
+  'productImageBig': '课程中心'
 }, {
   'id': 58,
   'panelId': 0,
   'type': 1,
   'productId': null,
   'sortOrder': 2,
+  'name': '学习中心',
+  'path': '/studycenter',
   'fullUrl': 'http: //xmall.exrick.cn/#/thanks',
   'picUrl': '学习中心',
   'picUrl2': null,
@@ -29,13 +33,15 @@ export let navMenu = [{
   'salePrice': null,
   'productName': null,
   'subTitle': null,
-  'productImageBig': '捐赠名单'
+  'productImageBig': '学习中心'
 }, {
   'id': 59,
   'panelId': 0,
   'type': 0,
   'productId': null,
   'sortOrder': 3,
+  'name': '管理培训',
+  'path': '/trainingcenter',
   'fullUrl': 'http: //xmadmin.exrick.cn',
   'picUrl': '管理培训',
   'picUrl2': null,
@@ -45,13 +51,15 @@ export let navMenu = [{
   'salePrice': null,
   'productName': null,
   'subTitle': null,
-  'productImageBig': '后台管理系统'
+  'productImageBig': '管理培训'
 }, {
   'id': 60,
   'panelId': 0,
   'type': 0,
   'productId': null,
   'sortOrder': 4,
+  'name': '设置',
+  'path': '/settingcenter',
   'fullUrl': 'http: //xpay.exrick.cn',
   'picUrl': '设置',
   'picUrl2': null,
@@ -61,13 +69,15 @@ export let navMenu = [{
   'salePrice': null,
   'productName': null,
   'subTitle': null,
-  'productImageBig': 'XPay支付系统'
+  'productImageBig': '设置'
 }, {
   'id': 61,
   'panelId': 0,
   'type': 0,
   'productId': null,
   'sortOrder': 5,
+  'name': '数据中心',
+  'path': '/datacenter',
   'fullUrl': 'https: //github.com/Exrick/x-boot',
   'picUrl': '数据中心',
   'picUrl2': null,
@@ -77,5 +87,5 @@ export let navMenu = [{
   'salePrice': null,
   'productName': null,
   'subTitle': null,
-  'productImageBig': 'XBoot开发平台'
+  'productImageBig': '数据中心'
 }]
