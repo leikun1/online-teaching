@@ -34,7 +34,7 @@
       </div>
       <div class="no-info" v-if="noResult">
         <div class="no-data">
-          <img src="/static/images/no-search.png">
+          <img src="../../assets/no-search.png">
           <br> 抱歉！暂时还没有商品
         </div>
         <section class="section">
@@ -47,7 +47,7 @@
       </div>
       <div class="no-info" v-if="error">
         <div class="no-data">
-          <img src="/static/images/error.png">
+          <img src="../../assets/error.png">
           <br> 抱歉！出错了...
         </div>
         <section class="section">
@@ -62,11 +62,11 @@
   </div>
 </template>
 <script>
-  import { getAllGoods } from '/api/goods.js'
-  import { recommend } from '/api/index.js'
-  import mallGoods from '/components/mallGoods'
-  import YButton from '/components/YButton'
-  import YShelf from '/components/shelf'
+  import { getAllGoods } from '../../js/api/goods.js'
+  import { recommend } from '../../js/api/index.js'
+  import mallGoods from '../common/mallGoods'
+  import YButton from '../common/YButton'
+  import YShelf from '../common/shelf'
   export default {
     data () {
       return {
@@ -175,8 +175,8 @@
   }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
-  @import "../../assets/style/mixin";
-  @import "../../assets/style/theme";
+  @import "../../styles/mixin";
+  @import "../../styles/theme";
 
   .nav {
     height: 60px;

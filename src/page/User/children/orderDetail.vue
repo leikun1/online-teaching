@@ -122,10 +122,10 @@
   </div>
 </template>
 <script>
-  import { getOrderDet, cancelOrder } from '/api/goods'
-  import YShelf from '/components/shelf'
-  import { getStore } from '/utils/storage'
-  import countDown from '/components/countDown'
+  import { getOrderDet, cancelOrder } from '../../../js/api/goods'
+  import YShelf from '../../common//shelf'
+  import { getStore } from '../../../js/utils/storage'
+  import countDown from '../../common//countDown'
   export default {
     data () {
       return {
@@ -215,7 +215,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "../../../assets/style/mixin";
+  @import "../../../styles/mixin";
 
   .orderStatus {
     display: flex;

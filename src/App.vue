@@ -9,7 +9,7 @@
   }
 </script>
 <style lang="scss" rel="stylesheet/scss">
-  @import "assets/style/index.scss";
+  @import "./styles/index.scss";
 
   #app {
     height: 100%;

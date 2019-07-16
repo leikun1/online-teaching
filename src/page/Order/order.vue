@@ -9,8 +9,8 @@
   </div>
 </template>
 <script>
-  import YHeader from '/common/header'
-  import YFooter from '/common/footer'
+  import YHeader from '../common/header'
+  import YFooter from '../common/footer'
   export default {
     components: {
       YHeader,

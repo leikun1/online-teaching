@@ -53,10 +53,10 @@
   </div>
 </template>
 <script>
-  import { thank, thanksList } from '/api/index.js'
-  import YShelf from '/components/shelf'
-  import product from '/components/product'
-  import mallGoods from '/components/mallGoods'
+  import { thank, thanksList } from '../../js/api/index.js'
+  import YShelf from '../common/shelf'
+  import product from '../common/product'
+  import mallGoods from '../common/mallGoods'
   import 'gitment/style/default.css'
   import Gitment from 'gitment'
   export default {

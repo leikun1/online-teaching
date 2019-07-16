@@ -36,9 +36,9 @@
   </div>
 </template>
 <script>
-  import YShelf from '/components/shelf'
-  import YButton from '/components/YButton'
-  import { getStore, setStore } from '/utils/storage'
+  import YShelf from '../common/shelf'
+  import YButton from '../common/YButton'
+  import { getStore, setStore } from '../../js/utils/storage'
   export default {
     data () {
       return {

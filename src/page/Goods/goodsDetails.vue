@@ -51,7 +51,7 @@
             <div v-html="productMsg">{{ productMsg }}</div>
           </div>
           <div class="no-info" v-else>
-            <img src="/static/images/no-data.png">
+            <img src="../../assets/no-data.png">
             <br>
             该商品暂无内容数据
           </div>
@@ -61,12 +61,12 @@
   </div>
 </template>
 <script>
-  import { productDet, addCart } from '/api/goods'
+  import { productDet, addCart } from '../../js/api/goods'
   import { mapMutations, mapState } from 'vuex'
-  import YShelf from '/components/shelf'
-  import BuyNum from '/components/buynum'
-  import YButton from '/components/YButton'
-  import { getStore } from '/utils/storage'
+  import YShelf from '../common/shelf'
+  import BuyNum from '../common/buynum'
+  import YButton from '../common/YButton'
+  import { getStore } from '../../js/utils/storage'
   export default {
     data () {
       return {
@@ -146,7 +146,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "../../assets/style/mixin";
+  @import "../../styles/mixin";
 
   .store-content {
     clear: both;

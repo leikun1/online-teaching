@@ -56,7 +56,7 @@
 
     <div class="no-info" v-if="error">
       <div class="no-data">
-        <img src="/static/images/error.png">
+        <img src="../../assets/error.png">
         <br> 抱歉！出错了...
       </div>
     </div>
@@ -74,11 +74,11 @@
   </div>
 </template>
 <script>
-  import { productHome } from '/api/index.js'
-  import YShelf from '/components/shelf'
-  import product from '/components/product'
-  import mallGoods from '/components/mallGoods'
-  import { setStore, getStore } from '/utils/storage.js'
+  import { productHome } from '../../js/api/index.js'
+  import YShelf from '../common/shelf'
+  import product from '../common/product'
+  import mallGoods from '../common/mallGoods'
+  import { setStore, getStore } from '../../js/utils/storage.js'
   export default {
     data () {
       return {

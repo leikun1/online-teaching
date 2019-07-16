@@ -75,12 +75,12 @@
   </div>
 </template>
 <script>
-  import YButton from '/components/YButton'
-  import { upload } from '/api/index'
-  import YShelf from '/components/shelf'
+  import YButton from '../../common//YButton'
+  import { upload } from '../../../js/api/index'
+  import YShelf from '../../common//shelf'
   import vueCropper from 'vue-cropper'
   import { mapState, mapMutations } from 'vuex'
-  import { getStore } from '/utils/storage'
+  import { getStore } from '../../../js/utils/storage'
   export default {
     data () {
       return {
@@ -189,7 +189,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "../../../assets/style/mixin";
+  @import "../../../styles/mixin";
 
   .avatar-box {
     height: 124px;

@@ -73,9 +73,9 @@
   </div>
 </template>
 <script>
-  import { orderList, delOrder } from '/api/goods'
-  import YShelf from '/components/shelf'
-  import { getStore } from '/utils/storage'
+  import { orderList, delOrder } from '../../../js/api/goods'
+  import YShelf from '../../common//shelf'
+  import { getStore } from '../../../js/utils/storage'
   export default {
     data () {
       return {
@@ -170,7 +170,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "../../../assets/style/mixin";
+  @import "../../../styles/mixin";
 
   .gray-sub-title {
     height: 38px;

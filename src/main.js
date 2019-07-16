@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-import store from './store/'
+import router from './js/router'
+import store from './js/store/'
 import VueLazyload from 'vue-lazyload'
 import infiniteScroll from 'vue-infinite-scroll'
 import VueCookie from 'vue-cookie'
-import { userInfo } from './api'
+import { userInfo } from './js/api'
 import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Message, Notification, Steps, Step, Table, TableColumn, Input, Dialog, Select, Option } from 'element-ui'
-import { getStore } from '/utils/storage'
+import { getStore } from './js/utils/storage'
 import VueContentPlaceholders from 'vue-content-placeholders'
+
 Vue.use(VueContentPlaceholders)
 Vue.use(Button)
 Vue.use(Pagination)

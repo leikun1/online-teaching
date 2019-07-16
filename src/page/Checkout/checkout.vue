@@ -135,13 +135,13 @@
   </div>
 </template>
 <script>
-  import { getCartList, addressList, addressUpdate, addressAdd, addressDel, productDet, submitOrder } from '/api/goods'
-  import YShelf from '/components/shelf'
-  import YButton from '/components/YButton'
-  import YPopup from '/components/popup'
-  import YHeader from '/common/header'
-  import YFooter from '/common/footer'
-  import { getStore } from '/utils/storage'
+  import { getCartList, addressList, addressUpdate, addressAdd, addressDel, productDet, submitOrder } from '../../js/api/goods'
+  import YShelf from '../common/shelf'
+  import YButton from '../common/YButton'
+  import YPopup from '../common/popup'
+  import YHeader from '../common/header'
+  import YFooter from '../common/footer'
+  import { getStore } from '../../js/utils/storage'
   export default {
     data () {
       return {

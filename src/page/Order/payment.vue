@@ -25,9 +25,9 @@
         <div class="pay-type">
           <div class="p-title">支付方式</div>
           <div class="pay-item">
-            <div :class="{active:payType==1}" @click="payType=1"><img src="/static/images/alipay@2x.png" alt=""></div>
-            <div :class="{active:payType==2}" @click="payType=2"><img src="/static/images/weixinpay@2x.png" alt=""></div>
-            <div :class="{active:payType==3}" @click="payType=3"><img src="/static/images/qqpay.png" alt=""></div>
+            <div :class="{active:payType==1}" @click="payType=1"><img src="../../assets/alipay@2x.png" alt=""></div>
+            <div :class="{active:payType==2}" @click="payType=2"><img src="../../assets/weixinpay@2x.png" alt=""></div>
+            <div :class="{active:payType==3}" @click="payType=3"><img src="../../assets/qqpay.png" alt=""></div>
           </div>
         </div>
 
@@ -96,10 +96,10 @@
   </div>
 </template>
 <script>
-  import YShelf from '/components/shelf'
-  import YButton from '/components/YButton'
-  import { getOrderDet, payMent } from '/api/goods'
-  import { getStore, setStore } from '/utils/storage'
+  import YShelf from '../common/shelf'
+  import YButton from '../common/YButton'
+  import { getOrderDet, payMent } from '../../js/api/goods'
+  import { getStore, setStore } from '../../js/utils/storage'
   export default {
     data () {
       return {

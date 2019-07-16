@@ -14,8 +14,8 @@
   </div>
 </template>
 <script>
-  import YHeader from '/common/header'
-  import YFooter from '/common/footer'
+  import YHeader from './common/header'
+  import YFooter from './common/footer'
   import { mapState, mapMutations } from 'vuex'
   export default {
     data () {
@@ -61,7 +61,7 @@
   }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
-  @import "../assets/style/mixin";
+  @import "../styles/mixin";
 
   .main {
     min-height: calc(100vh - 454px);

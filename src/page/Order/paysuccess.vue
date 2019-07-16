@@ -20,8 +20,8 @@
   </div>
 </template>
 <script>
-  import YShelf from '/components/shelf'
-  import YButton from '/components/YButton'
+  import YShelf from '../common/shelf'
+  import YButton from '../common/YButton'
   export default {
     data () {
       return {

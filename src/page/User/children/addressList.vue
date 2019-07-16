@@ -58,11 +58,11 @@
   </div>
 </template>
 <script>
-  import { addressList, addressUpdate, addressAdd, addressDel } from '/api/goods'
-  import YButton from '/components/YButton'
-  import YPopup from '/components/popup'
-  import YShelf from '/components/shelf'
-  import { getStore } from '/utils/storage'
+  import { addressList, addressUpdate, addressAdd, addressDel } from '../../../js/api/goods'
+  import YButton from '../../common//YButton'
+  import YPopup from '../../common//popup'
+  import YShelf from '../../common//shelf'
+  import { getStore } from '../../../js/utils/storage'
   export default {
     data () {
       return {
