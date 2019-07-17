@@ -1,5 +1,5 @@
 <template>
-  <div class="header-box">
+  <div class="header-box test">
     <div class="header-container">
       <header class="w">
         <div class="w-box">
@@ -73,7 +73,6 @@
       </header>
       <slot name="nav">
         <div class="nav-sub" :class="{fixed:st}">
-          <div class="nav-sub-bg"></div>
           <div class="nav-sub-wrapper" :class="{fixed:st}">
             <div class="w">
               <ul class="nav-list2">
@@ -864,8 +863,7 @@
   .nav-sub {
     position: relative;
     z-index: 20;
-    height: 56pt;
-    background: #F2F2F2;
+    background: #FFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
     &.fixed {
       position: fixed;
@@ -879,8 +877,7 @@
       background-image: linear-gradient(#fff, #f1f1f1);
     }
     .nav-sub-wrapper {
-      padding: 31px 0;
-      height: 90px;
+      padding: 15px 0;
       position: relative;
       &.fixed {
         padding: 0;

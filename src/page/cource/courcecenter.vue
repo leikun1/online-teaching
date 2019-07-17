@@ -1,44 +1,69 @@
 <template>
   <div class="home">
-    
+
   <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
-    <div class="banner" >
-      <div class="bg" ref="bg"
-        @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
-        <transition name="fade">
-          <div v-for="(item, i) in banner" v-if="i===mark" :key="i" style="position:absolute" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
-            <img v-if="item.picUrl" class="img1" :src="item.picUrl"/>
-            <img v-if="item.picUrl2"  class="img2 a" :src="item.picUrl2"/>
-            <img v-if="item.picUrl3"  class="img3 b" :src="item.picUrl3"/>
-          </div>
-        </transition>
+
+    <div class="course-infos-top">
+      <div class="info-wrap">
+        <div class="title-box">
+          <h1>EXCEL通关秘籍</h1>
+          <h2>去评分></h2>
+          <h2><span>课件数：9</span><span>习题集：4</span><span>课程学分：4</span></h2>
+        </div>
+
       </div>
-      <div class="page">
-        <ul class="dots">
-          <li class="dot-active" v-for="(item, i) in banner" :class="{ 'dot':i!=mark }" :key="i" @click="change(i)"></li>
+      <div class="fixed-wrap" >
+        <div class="con">
+          <div class="btns">
+            <a href="javascript:;" class="js-buy-trigger green-btn gobuy" data-cid="136" data-pay="0" id="buy-trigger">开始学习</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="course-infos-t ">
+      <div id="Anchor"></div>
+      <div class="comp-tab-t js-comp-tab">
+        <ul class="clearfix">
+          <li class="comp-tab-item-first comp-tab-item active ">
+            <a href="/class/136.html#Anchor">课程介绍</a>
+
+            <div class="borderLine"></div></li>
+          <li class="comp-tab-item  ">
+            <a href="/class/package/136.html#Anchor">组合套餐</a>
+
+
+            <div class="borderLine"></div></li>
+          <li class="comp-tab-item ">
+            <a href="/class/chapter/136.html#Anchor">章节目录<img class="try-mark" src="/static/module/class/chapter/img/try-mark.png" alt=""></a>
+
+            <div class="borderLine"></div></li>
+          <li class="comp-tab-item">
+            <a href="/class/136.html#Prchor">售前咨询</a>
+            <span>239</span>
+
+            <div class="borderLine"></div></li>
+          <li class="comp-tab-item ">
+            <a href="/class/evaluation/136.html#Anchor">用户评价</a>
+            <span>1576</span>
+
+            <div class="borderLine"></div></li>
+
+          <li class="comp-tab-item ">
+            <a href="/class/136.html#Envir">环境参数</a>
+
+          </li>
+          <li class="comp-tab-item ">
+            <a href="/class/log/136.html#Log">更新日志</a>
+            <div class="borderLine"></div>
+          </li>
         </ul>
       </div>
     </div>
 
+    <!--
     <div v-for="(item,i) in home" :key="i">
-
-      <div class="activity-panel" v-if="item.type === 1">
-        <ul class="box">
-          <li class="content" v-for="(iitem,j) in item.panelContents" :key="j" @click="linkTo(iitem)">
-            <img class="i" :src="iitem.picUrl">
-            <a class="cover-link"></a>
-          </li>
-        </ul>
-      </div>
-
-      <section class="w mt30 clearfix" v-if="item.type === 2">
-        <y-shelf :title="item.name">
-          <div slot="content" class="hot">
-            <mall-goods :msg="iitem" v-for="(iitem,j) in item.panelContents" :key="j"></mall-goods>
-          </div>
-        </y-shelf>
-      </section>
-
       <section class="w mt30 clearfix" v-if="item.type === 3">
         <y-shelf :title="item.name">
           <div slot="content" class="floors" >
@@ -50,10 +75,9 @@
           </div>
         </y-shelf>
       </section>
-
       </div>
-    </div>
-
+    -->
+  </div>
     <div class="no-info" v-if="error">
       <div class="no-data">
         <img src="../../assets/error.png">
@@ -74,7 +98,7 @@
   </div>
 </template>
 <script>
-  import { productHome } from '../../js/api/index.js'
+  import { productHome } from '../../js/api'
   import YShelf from '../common/shelf'
   import product from '../common/product'
   import mallGoods from '../common/mallGoods'
@@ -910,5 +934,5 @@
   }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
-  @import "../../styles/menu/datacenter.scss";
+  @import "../../styles/menu/courcecenter";
 </style>

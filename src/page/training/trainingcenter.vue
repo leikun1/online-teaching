@@ -74,7 +74,7 @@
   </div>
 </template>
 <script>
-  import { productHome } from '../../js/api/index.js'
+  import { productHome } from '../../js/api'
   import YShelf from '../common/shelf'
   import product from '../common/product'
   import mallGoods from '../common/mallGoods'
@@ -910,5 +910,5 @@
   }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
-  @import "../../styles/menu/settingcenter.scss";
+  @import "../../styles/menu/trainingcenter";
 </style>

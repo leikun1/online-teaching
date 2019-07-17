@@ -8,14 +8,3 @@
     name: 'app'
   }
 </script>
-<style lang="scss" rel="stylesheet/scss">
-  @import "./styles/index.scss";
-
-  #app {
-    height: 100%;
-  }
-
-  .main {
-    background: #ededed;;
-  }
-</style>

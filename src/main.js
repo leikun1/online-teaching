@@ -10,6 +10,8 @@ import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Message, Not
 import { getStore } from './js/utils/storage'
 import VueContentPlaceholders from 'vue-content-placeholders'
 
+import './styles/main.css'
+
 Vue.use(VueContentPlaceholders)
 Vue.use(Button)
 Vue.use(Pagination)
